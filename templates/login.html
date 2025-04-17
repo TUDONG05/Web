@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -14,7 +13,14 @@
         <input type="password" id="password" placeholder="Mật khẩu">
         <button id="login-btn">Đăng nhập</button>
         <p id="error-msg"></p>
+
+        <!-- Thêm dòng này -->
+        <p>Bạn chưa có tài khoản? <a href="{{ url_for('register') }}">Đăng ký</a></p>
     </div>
     <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    {% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
 </body>
 </html>
